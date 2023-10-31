@@ -171,9 +171,9 @@ public:
             for (int i = 0; i < index; ++i)
             {
                 temp = temp->m_Next;
-                temp->m_Value = value;
             }
 
+            temp->m_Value = value;
             return temp;
         }
     }
@@ -223,8 +223,11 @@ int main()
     // ll->removeFirst();
     // ll->removeFirst();
 
+    ll->set(2, 20);
+
     ll->printList();
 
+    std::cout << "Get: " << ll->get(2)->m_Value << std::endl;
     std::cout << "Get: " << ll->get(3)->m_Value << std::endl;
 
     // ll->getHead();
