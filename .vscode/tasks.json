@@ -8,7 +8,7 @@
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
-                "${file}",
+                "${fileDirname}/${fileBasenameNoExtension}.cpp",
                 "-o",
                 "${fileDirname}/build/${fileBasenameNoExtension}.out"
             ],
