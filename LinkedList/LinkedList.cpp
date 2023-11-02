@@ -159,22 +159,19 @@ public:
         }
     }
 
-    Node *set(int index, int value)
+    bool set(int index, int value)
     {
-        if (index < 0 || index > m_Length)
+        Node *temp = get(index);
+
+        if (temp)
         {
-            return nullptr;
+            temp->m_Value = value;
+            return true;
         }
         else
         {
-            Node *temp = m_Head;
-            for (int i = 0; i < index; ++i)
-            {
-                temp = temp->m_Next;
-            }
-
-            temp->m_Value = value;
-            return temp;
+            std::cout << "Linked List of index " << index << " is out of bound!\n";
+            return false;
         }
     }
 
@@ -223,7 +220,7 @@ int main()
     // ll->removeFirst();
     // ll->removeFirst();
 
-    ll->set(2, 20);
+    ll->set(10, 20);
 
     ll->printList();
 
